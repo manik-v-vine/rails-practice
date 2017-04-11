@@ -14,7 +14,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: true
-  database: railspractice
+  database: user
   username: root
   password: root
   host: localhost
