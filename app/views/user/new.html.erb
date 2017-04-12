@@ -1,11 +1,5 @@
-<h1>Welcome to rails</h1>
-Controller Data:<%= @controllerMessage%><br>
-<br>
-<%= link_to 'Go to sample', :controller => :welcome, :action => :sample %>
-<br><br>
-<% hello = "world" %>
-<%= localvariable%>
- <%= form_for :user , :url => :welcome_sample do |f|%> <br><br>
+<h1>Add new User</h1><br><br>
+<%= form_for :user, :url => :user  do |f|%> <br><br>
  First Name: <%= f.text_field :first_name%><br><br>
   Last Name: <%= f.text_field :last_name%><br><br>
       Email: <%= f.text_field :email%><br><br>
@@ -14,3 +8,5 @@ Controller Data:<%= @controllerMessage%><br>
      Mobile: <%= f.text_field :mobile_no%><br><br>
      <%= f.submit "Save"%>
  <% end %>
+
+ 

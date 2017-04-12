@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/index' => 'welcome#index'
-  post 'welcome/sample' => 'welcome#sample'
+  get 'user/index' => 'user#index'
+  post 'user/new' => 'user#new'
+  post 'user' => 'user#create'
+  get  'user.:id'=> 'user#show'
 
-  root 'welcome#index'
+  root 'user#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
