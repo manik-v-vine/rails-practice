@@ -14,7 +14,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: true
-  database: user
+  database: railspractice
   username: root
   password: root
   host: localhost
@@ -24,8 +24,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: db/railspractice_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db/railspractice_production
