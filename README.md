@@ -1,2 +1,2 @@
-# FirstApplication
+# RailsPractice
 Practice application for rails.

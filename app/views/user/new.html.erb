@@ -1,8 +1,17 @@
 <h1>Add new User</h1><br><br>
+<% if @users.errors.any?%>
+<h2><%= @users.errors.count %></h2>
+<ul>
+<%= @users.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+</ul>
+<% end %>
 <%= form_for :user, :url => :user  do |f|%> <br><br>
  First Name: <%= f.text_field :first_name%><br><br>
   Last Name: <%= f.text_field :last_name%><br><br>
       Email: <%= f.text_field :email%><br><br>
+     Active: <%= f.radio_button :active, "Yes"%>Yes<%= f.radio_button :active, "No"%>No<br><br>
       D.O.B: <%= f.text_field :date_of_birth%><br><br>
       Phone: <%= f.text_field :phone_no%><br><br>
      Mobile: <%= f.text_field :mobile_no%><br><br>

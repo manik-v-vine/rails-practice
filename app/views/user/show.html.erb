@@ -1,9 +1,11 @@
-<h1>The User details are</h1>
-
-<%= @user.first_name%><br><br>
-<%= @user.last_name%><br><br>
-<%= @user.email%>
-<%= @user.date_of_birth%>
-<%= @user.active%>
-<%= @user.phone_no%>
-<%= @user.mobile_no%>
+<h1>The details of<%= " " + @user.first_name + @user.last_name + " "%> are</h1>
+First Name: <%=  @user.first_name %><br>
+Last Name:<%=  @user.email %><br>
+D.O.B:<%= @user.date_of_birth %><br>
+<% if @user.active == true %>
+Active: Yes<br>
+<% else %>
+Active: No<br>
+<% end %>
+Phone No:<%= @user.phone_no %><br>
+Mobile No:<%= @user.mobile_no %><br>

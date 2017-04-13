@@ -9,7 +9,9 @@ Controller Data:<%= @controllerMessage%><br>
 <% hello = "world" %>
 <%= localvariable%>
  <% end %>
-
+<%= form_for :nil, :url => :user_new do |f|%>
+<%= f.submit "Add User"%>
+<% end %>
 <h1>The User records are </h1>
  <table>
  	<tr>
@@ -17,7 +19,8 @@ Controller Data:<%= @controllerMessage%><br>
  		<th>Last  Name</th>
 		 <th>Email</th>
 		 <th>D.O.B</th>
-		 <th>Phone no.</th>
+		 <th>Active</th>
+		 <th>Phone no</th>
 		 <th>Mobile no</th>
 	</tr>
  <% @users.each do |user|%>
@@ -26,6 +29,7 @@ Controller Data:<%= @controllerMessage%><br>
 	 <td><%= user.last_name%></td>
 	 <td><%= user.email%></td>
 	 <td><%= user.date_of_birth %></td>
+	 <td><%= user.active %></td>
 	 <td><%= user.phone_no%></td>
 	 <td><%= user.mobile_no%></td>
  </tr>
@@ -33,6 +37,3 @@ Controller Data:<%= @controllerMessage%><br>
  </table>
 
 
-<%= form_for :nil, :url => :user_new do |f|%>
-<%= f.submit "Add User"%>
-<% end %>
