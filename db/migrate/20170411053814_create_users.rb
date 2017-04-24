@@ -1,4 +1,4 @@
-class CreateUsers < ActiveRecord::Migration[5.0]
+class CreateUsers < ActiveRecord::Migration
   def up
     create_table :users do |t|
     	t.column "first_name", :string, :limit => 32, :null => false

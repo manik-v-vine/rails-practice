@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -8,32 +9,31 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411060102) do
+ActiveRecord::Schema.define(:version => 20170411060102) do
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "addresses", :force => true do |t|
     t.integer  "user_id"
-    t.string   "house_no",    limit: 32
-    t.string   "street_name", limit: 32
-    t.string   "city",        limit: 32
-    t.string   "country",     limit: 32
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "state",       limit: 12
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+    t.string   "house_no",    :limit => 32
+    t.string   "street_name", :limit => 32
+    t.string   "city",        :limit => 32
+    t.string   "country",     :limit => 32
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "state",       :limit => 12
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",    limit: 32,  null: false
-    t.string   "last_name",     limit: 32,  null: false
-    t.string   "email",         limit: 128
+  create_table "users", :force => true do |t|
+    t.string   "first_name",    :limit => 32,  :null => false
+    t.string   "last_name",     :limit => 32,  :null => false
+    t.string   "email",         :limit => 128
     t.date     "date_of_birth"
     t.boolean  "active"
-    t.string   "phone_no",      limit: 12
-    t.string   "mobile_no",     limit: 12
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "phone_no",      :limit => 12
+    t.string   "mobile_no",     :limit => 12
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end

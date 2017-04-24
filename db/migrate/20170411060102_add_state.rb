@@ -1,4 +1,4 @@
-class AddState < ActiveRecord::Migration[5.0]
+class AddState < ActiveRecord::Migration
   def up
   	add_column :addresses, :state, :string, :limit => 12
   end
