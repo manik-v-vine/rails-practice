@@ -9,9 +9,8 @@ Controller Data:<%= @controllerMessage%><br>
 <% hello = "world" %>
 <%= localvariable %>
  <% end %>
-<%= form_for :nil, url: new_user_path , :method => :get do |f|%>
-<%= f.submit "Add User"%>
-<% end %>
+<%= button_to 'Add New User', new_user_path, :method => :get%></td>
+
 <h1>The User records are </h1>
  <table>
  	<tr>
@@ -32,9 +31,9 @@ Controller Data:<%= @controllerMessage%><br>
 	 <td><%= user.active %></td>
 	 <td><%= user.phone_no%></td>
 	 <td><%= user.mobile_no%></td>
-	 <td><%= link_to 'Show', user_path(user)%></td>
-	 <td><%= link_to 'Edit', edit_user_path(user)%></td>
-	 <td><%= link_to 'Delete', user_path(user), :method => :delete %></td>
+	 <td><%= button_to 'Show', user_path(user), :method => :get%></td>
+	 <td><%= button_to 'Edit', edit_user_path(user), :method => :get%></td>
+	 <td><%= button_to 'Delete', user_path(user),:method => :delete %></td>
 </tr>
  <% end %>
  </table>

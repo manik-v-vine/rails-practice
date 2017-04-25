@@ -42,7 +42,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to user_path
+    redirect_to :action => :index
   end
 
   private
