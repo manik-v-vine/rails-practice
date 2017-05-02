@@ -1,0 +1,30 @@
+
+<h1>Hello!</h1>
+<% if false %>
+Controller Data:<%= @controllerMessage%>
+<%= link_to 'Add new User', new_user_path %>
+<% hello = "world" %>
+<%= localvariable %>
+<%= link_to'Add New User', new_user_path%>
+<% end%>
+
+<%# The following line of code represents Jquery library plugin
+      for styling the elements in this web page %>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<%= javascript_include_tag 'user'%>
+<%= javascript_include_tag 'jquery'%>
+
+
+<button id = "button">Add new user</button>
+<dialog id = "dialog">
+
+</dialog>
+
+<%# The following line of code represents CSS
+      for styling the elements in this web page %>
+<%= stylesheet_link_tag('user') %>
+
+
+<%# The following code represents the table which lists all
+      users.%>
+<%= render 'table' %>

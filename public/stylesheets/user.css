@@ -1,0 +1,75 @@
+h1{
+    color: Green;
+    text-align: center;
+    border: 2px;
+  }
+  h2{
+    color: blue;
+    text-align: center;
+    border: 1px;
+  }
+  body{
+    background-color: lightgray;
+  }
+  h4{
+    text-align: center;
+  }
+  form {
+    padding: 0px;
+    text-align: center;
+  }
+  dialog {
+    width: 320px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+  }
+  table {
+    width: 95%;
+    border-collapse: collapse;
+    padding: 10px;
+  }
+  th, td{
+    width: 10%;
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+  }
+  #button{
+    background-color: lightblue;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 10px;
+    margin-left: 100px;
+    margin-top: 10px;
+    text-decoration-line: none;
+  }
+ .textfield{
+  margin-left: 20px;
+ }
+ .close_button{
+    width: 75px;
+    height: 30px;
+    background-color: white;
+    padding: none;
+    margin-left: none;
+    margin-top: none;
+    border-radius: none;
+    box-shadow: none;
+ }
+
+ .close{
+    width: 25px;
+    height: 30px;
+    background-color: white;
+    text-align: none;
+    text-decoration: none;
+    color: black;
+    padding: none;
+    margin-left: none;
+    margin-top: none;
+    border-radius: none;
+    box-shadow: none;
+ }
