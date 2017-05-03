@@ -1,4 +1,5 @@
 <h1> Register the user</h1>
+<%= form_for @user, :remote => true , :id => 'form' do |f|%>
 <%if @user.errors.any? %>
 <%= @user.errors.count %>
 <ul>
@@ -7,14 +8,23 @@
 <% end %>
   </ul>
 <% end  %>
+<%= f.label 'First Name:' %>
+<%= f.text_field :first_name %><br><br>
 
-<%= form_for @user, :remote => true , :id => 'form' do |f|%>
-First Name: <%= f.text_field :first_name %><br><br>
-Last Name: <%= f.text_field :last_name %><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: <%= f.text_field :email %><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.O.B: <%= f.text_field :date_of_birth %><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone: <%= f.text_field :phone_no %><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile: <%= f.text_field :mobile_no %><br><br>
+<%= f.label 'Last Name:' %>
+<%= f.text_field :last_name %><br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label 'Email:' %>
+<%= f.text_field :email %><br><br>
+
+&nbsp;<%= f.label 'Birth Date:' %>
+<%= f.text_field :date_of_birth %><br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label 'Phone:' %>
+<%= f.text_field :phone_no %><br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label 'Mobile:' %>
+<%= f.text_field :mobile_no %><br><br>
 <%= f.submit 'Save Info', :id => 'form_submit'%><br><br>
 <%= link_to 'Close Dialog',users_path,:method => 'get', :class => 'close'%>
 <% end %>

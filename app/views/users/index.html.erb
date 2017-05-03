@@ -8,6 +8,12 @@ Controller Data:<%= @controllerMessage%>
 <%= link_to'Add New User', new_user_path%>
 <% end%>
 
+<head>
+<%# The following line of code represents CSS
+      for styling the elements in this web page %>
+<%= stylesheet_link_tag('user') %>
+</head>
+
 <%# The following line of code represents Jquery library plugin
       for styling the elements in this web page %>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -20,11 +26,10 @@ Controller Data:<%= @controllerMessage%>
 
 </dialog>
 
-<%# The following line of code represents CSS
-      for styling the elements in this web page %>
-<%= stylesheet_link_tag('user') %>
 
 
 <%# The following code represents the table which lists all
       users.%>
-<%= render 'table' %>
+<div class="user_list">
+  <%= render 'table' %>
+</div>

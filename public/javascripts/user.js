@@ -1,35 +1,55 @@
 //  function showDialog(){
 //    document.getElementById('dialog').show();
 // }
+
 $(document).ready(function(){
-    $("button").click(function(){
-      $("#dialog").show();
-      $.ajax({
+
+  $("button").click(function(){
+    $("#dialog").show();
+    $.ajax({
       url: '/users/new',
       type: 'get',
       success: function(response){
         $('#dialog').html(response.html);
+        bindFormEvents();
       }
     })
-    });
-});
+  });
 
-
-$(document).ready(function(){
-    $("#form").submit(function(){
-      $("#dialog").close();
-      $.ajax({
-      url: form.attr('action'),
-      type: 'post',
-      data: form.serialize(),
+  $("#edit_button").click(function(){
+    $("#dialog").show();
+    $.ajax({
+      url: '/users/#{:id}/edit',
+      type: 'get',
       success: function(response){
-        $('#table').html(response.html);
-        return false;
+        $('#dialog').replaceWith(response.html);
       }
     })
-    });
+  });
+
+
+
 });
 
+function bindFormEvents(){
+  $('#dialog .user_info').submit(function(){
+    submitCreate($(this));
+    return false;
+  })
+}
+
+function submitCreate(form){
+  $("#dialog").hide();
+  $.ajax({
+    url: form.attr('action'),
+    type: 'post',
+    data: form.serialize(),
+    success: function(response){
+      $('.user_list').html(response.html);
+      return false;
+    }
+  })
+}
 
 // });
 // function() {

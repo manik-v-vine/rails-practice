@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
   	@controllerMessage = "Hello! Hi!"
-  	@users = User.all
+    @users = User.all
   end
 
   def show
@@ -13,24 +13,29 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-     render :json => {
+     render(:json => {
        :html => render_to_string(:partial => 'new')
-     }
+     })
   end
 
   def create
   	@user = User.new(user_params)
    	if @user.save
-      render :json => {
-       :html => render_to_string(:partial => 'table')
-     }
-    	else
+      @users = User.all
+      render(:json => {
+      :html => render_to_string(:partial => 'table')
+     })
+    else
 
   	end
   end
 
   def edit
     @user = User.find(params[:id])
+    render(:json => {
+       :html => render_to_string(:partial => 'edit'),
+       :locals => {:@user => @user}
+     })
   end
 
   def update
