@@ -14,16 +14,13 @@ Controller Data:<%= @controllerMessage%>
 <%= stylesheet_link_tag('user') %>
 </head>
 
+<body>
 <%# The following line of code represents Jquery library plugin
       for styling the elements in this web page %>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<%= javascript_include_tag 'user'%>
-<%= javascript_include_tag 'jquery'%>
 
 
 <button id = "button">Add new user</button>
 <dialog id = "dialog">
-
 </dialog>
 
 
@@ -33,3 +30,5 @@ Controller Data:<%= @controllerMessage%>
 <div class="user_list">
   <%= render 'table' %>
 </div>
+
+</body>

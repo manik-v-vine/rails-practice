@@ -1,3 +1,6 @@
+
+<!-- Displays the user's information using erb template engine in the HTML page-->
+
 <h1>The details of<%= " " + @user.first_name + " "+ @user.last_name + " "%> are</h1>
 First Name: <%=  @user.first_name %><br>
 Last Name:<%=  @user.last_name %><br>
@@ -7,4 +10,4 @@ Active: No<br>
 Phone No:<%= @user.phone_no %><br>
 Mobile No:<%= @user.mobile_no %><br>
 
-<%= button_to 'Navigate to Home', user_index_path, :method => :get%></td>
+<%= button_to 'Navigate to Home', users_path, :method => :get%></td>

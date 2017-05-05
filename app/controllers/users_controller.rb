@@ -1,16 +1,26 @@
+=begin
+Resourceful user controller class that handles all the requests 
+recived from the browser after routing 
+=end
+
 class UsersController < ApplicationController
+
+  #Index action that represents the index template 
   def index
   	@controllerMessage = "Hello! Hi!"
     @users = User.all
   end
 
+  #Show action that represents the show template
   def show
     @user= User.find(params[:id])
-    if (@user == nil)
-      @user = User.new
-    end
+    puts @user.first_name
+    render(:json => {
+       :html => render_to_string(:template => 'users/show')
+     })
   end
 
+  #New action that represents the new partial
   def new
     @user = User.new
      render(:json => {
@@ -18,6 +28,7 @@ class UsersController < ApplicationController
      })
   end
 
+  #Create action which saves the user's information
   def create
   	@user = User.new(user_params)
    	if @user.save
@@ -26,33 +37,43 @@ class UsersController < ApplicationController
       :html => render_to_string(:partial => 'table')
      })
     else
-
+      
   	end
   end
 
+  #Edit action that represents the edit partial
   def edit
     @user = User.find(params[:id])
     render(:json => {
-       :html => render_to_string(:partial => 'edit'),
-       :locals => {:@user => @user}
+       :html => render_to_string(:partial => 'edit')
      })
   end
 
+  #Update action that updates the user's information
   def update
     @user = User.find(params[:id])
-
-    if @user.update_attributes(user_params)
-
+    if @user.update_attributes(user_params) 
+      @users = User.all    
+      render(:json => {
+      :html => render_to_string(:partial => 'table')
+     })
     else
-      render 'edit'
+      
     end
   end
 
+  #Destry action that deletes the user's information
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-
-    redirect_to :action => :index
+    if @user.destroy
+      @users = User.all
+      render(:json => {
+      :html => render_to_string(:partial => 'table')
+     })
+    else
+    
+    end
+    
   end
 
   def user_params
