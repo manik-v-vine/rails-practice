@@ -1,3 +1,7 @@
+/*
+  Javascript file for managing the application behaviour 
+  like ajax requests etc.
+*/
 $(document).ready(function(){
   /*
     Adds a new user via an ajax call.

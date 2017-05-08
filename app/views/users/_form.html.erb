@@ -1,20 +1,12 @@
+<!-- Form partial which allows to add/edit user's information and 
+submits the form on the successful validation of user details-->
+
 <h1> Register the user</h1>
 <%= form_for @user, :remote => true , :id => 'form' do |f|%>
-<%if @user.errors.any? %>
-<%= @user.errors.count %>
-<ul>
-<%@user.errors.full_messages.each do |error| %>
- <li><%= error %></li>
-<% end %>
-  </ul>
-<% end  %>
 <%= f.label 'First Name:' %>
 <%= f.text_field :first_name , :id =>'first_name' %><br><br>
-
-
 <%= f.label 'Last Name:' %>
 <%= f.text_field :last_name, :id => 'last_name' %><br><br>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label 'Email:' %>
 <%= f.text_field :email, :id => 'email' %><br><br>
 

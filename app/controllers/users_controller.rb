@@ -1,6 +1,6 @@
 =begin
 Resourceful user controller class that handles all the requests 
-recived from the browser after routing 
+received from the browser to appropriate action after routing. 
 =end
 
 class UsersController < ApplicationController
@@ -35,10 +35,6 @@ class UsersController < ApplicationController
       render(:json => {
       :html => render_to_string(:partial => 'table')
      })
-    else
-      render(:json => {
-       :html => render_to_string(:partial => 'new')
-     })
   	end
   end
 
@@ -58,8 +54,6 @@ class UsersController < ApplicationController
       render(:json => {
       :html => render_to_string(:partial => 'table')
      })
-    else
-      
     end
   end
 
@@ -71,8 +65,6 @@ class UsersController < ApplicationController
       render(:json => {
       :html => render_to_string(:partial => 'table')
      })
-    else
-      
     end
   end
 
