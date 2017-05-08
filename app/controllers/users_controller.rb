@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   #Show action that represents the show template
   def show
     @user= User.find(params[:id])
-    puts @user.first_name
     render(:json => {
        :html => render_to_string(:template => 'users/show')
      })
@@ -37,7 +36,9 @@ class UsersController < ApplicationController
       :html => render_to_string(:partial => 'table')
      })
     else
-      
+      render(:json => {
+       :html => render_to_string(:partial => 'new')
+     })
   	end
   end
 
@@ -71,11 +72,11 @@ class UsersController < ApplicationController
       :html => render_to_string(:partial => 'table')
      })
     else
-    
+      
     end
-    
   end
 
+  #user_params that permits only the strong parameters of the form.  
   def user_params
   	params.require(:user).permit(:first_name,:last_name,:email, :date_of_birth,:active, :phone_no, :mobile_no)
   end
