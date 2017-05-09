@@ -41,7 +41,7 @@ gem 'jquery-rails'
 #   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 #   gem 'byebug', platform: :mri
 # end
-#gem 'actioncable', github: 'rails/actioncable', branch: 'archive'
+# gem 'actioncable', github: 'rails/actioncable', branch: 'archive'
 # group :development do
 #   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 #   gem 'web-console', '>= 3.3.0'
@@ -49,6 +49,6 @@ gem 'jquery-rails'
 
 # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'delayed_job_active_record', '4.0.1'
+#gem 'delayed_job_active_record', '4.0.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'rack-livereload', '0.3.15'
