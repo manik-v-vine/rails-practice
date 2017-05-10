@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 user_info: 
+ id: 1
  first_name: "Raghvan"
  last_name: "S"
  email: "raghavan12@gmail.com"
@@ -16,3 +17,7 @@ user_info:
 
 user_invalid_email:
  email: "raghav"
+
+user_update_info:
+ last_name: "R"
+ 

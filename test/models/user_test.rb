@@ -1,47 +1,51 @@
-require 'test_helper'
+require_relative '../../test/test_helper'
 
 class UserTest < ActiveSupport::TestCase 
+  def test_user_without_any_details
+    user = User.new
+    assert user.save, "user can't be saved without any details"
+  end
 
-   test "saving user without last_name and email details" do 
+  def test_user_without_last_name_and_email
  		user = User.new
  		user.first_name = users(:user_info).first_name
  		assert user.save, "user can't be saved without last_name and email"
-   end
-
-  test "saving user without first_name and email details" do
- 		user = User.new
- 		user.last_name = users(:user_info).last_name
-  		assert user.save, "user can't be saved without last_name and email"
-   end 
-
-  test "saving user without first_name and last_name details" do
-  	    user = User.new
- 		user.email = users(:user_info).email
-   	 	assert user.save, "user can't be saved without first_name and last_name"
   end
 
-  test "saving user without first_name" do
+  def utest_user_without_first_name_and_email
+ 		user = User.new
+ 		user.last_name = users(:user_info).last_name
+  	assert user.save, "user can't be saved without first_name and email"
+  end 
+
+  def test_user_without_first_name_and_last_name
+  	user = User.new
+ 		user.email = users(:user_info).email
+   	assert user.save, "user can't be saved without first_name and last_name"
+  end
+
+  def test_user_without_first_name
  		user = User.new
  		user.last_name = users(:user_info).last_name
  		user.email = users(:user_info).email
  		assert user.save, "user can't be saved without first_name"
   end
 
-  test "saving user without last_name" do
+  def test_user_without_last_name
 		user = User.new
  		user.first_name = users(:user_info).first_name
  		user.email = users(:user_info).email
-    	assert user.save, "user can't be saved without last_name"
+    assert user.save, "user can't be saved without last_name"
   end
 
-  test "saving user without email" do
+  def test_user_without_email
 	 	user = User.new
  		user.first_name = users(:user_info).first_name
  		user.last_name = users(:user_info).last_name
-  		assert user.save, "user can't be saved without email"
+  	assert user.save, "user can't be saved without email"
   end
 
-  test "saving user without proper email format" do
+  def test_user_without_proper_email
 	 	user = User.new
  		user.first_name = users(:user_info).first_name
  		user.last_name = users(:user_info).last_name
@@ -49,11 +53,12 @@ class UserTest < ActiveSupport::TestCase
  	 	assert user.save, "user can't be saved without proper email id"
   end 
 
-  test "saving user with proper user credentials" do
+
+  def test_user_with_proper_details
 	 	user = User.new
  		user.first_name = users(:user_info).first_name
  		user.last_name = users(:user_info).last_name
  		user.email = users(:user_info).email
- 	    assert user.save, "user can't be saved without proper email id"
+ 	  assert user.save, "user can't be saved without proper email id"
   end 
 end

@@ -24,8 +24,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/railspractice_test
+  database: railspractice_test
 
 production:
   <<: *default
-  database: db/railspractice_production
+  database: railspractice_production
